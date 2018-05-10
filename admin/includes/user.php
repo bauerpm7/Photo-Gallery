@@ -16,17 +16,17 @@ class User {
   public static function find_user_by_id($user_id) {
 
     global $database;
-    $result_set = self::find_this_query("SELECT * FROM users WHERE id = $user_id LIMIT 1" );
-    $found_user = mysqli_fetch_array($result_set);
-    return $found_user;
+    $result_array = self::find_this_query("SELECT * FROM users WHERE id = $user_id LIMIT 1" );
+
+    return !empty($result_array) ? $first_item = array_shift($result_array) : false;
   }
 
   public static function find_this_query($sql){
 
-    global $database;
+    global $database; 
     $result_set = $database->query($sql);
     $the_object_array = array();
-    
+
     while($row = mysqli_fetch_array($result_set)){
       $the_object_array[] = self::instantiate_user($row);
     }
@@ -38,24 +38,20 @@ class User {
     $the_object = new self();
     
     foreach ($the_record as $property => $value) {
-      if($the_object->has_the_property($the_property)){
-        $the_object->the_attribute = $value
+      if($the_object->has_the_property($property)){
+        $the_object->$property = $value;
       }
     }
 
     return $the_object;
   }
 
-  private static function has_the_property($the_property) {
+  private function has_the_property($the_property) {
 
     $object_properties = get_object_vars($this);
-    return array_key_exists($the_property, $object_properties)
+    return array_key_exists($the_property, $object_properties);
   }
 }
 
 
-
-
-
-
- ?>
+?>
