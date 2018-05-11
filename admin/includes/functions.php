@@ -9,15 +9,12 @@
       include($path);
     } 
   }
-spl_autoload_register('classAutoLoader');
 
+  spl_autoload_register('classAutoLoader');
 
-
-
-
-
-
-
+  function redirect($location) {
+    header("Location: {$location}");
+  }
 
 
  ?>
