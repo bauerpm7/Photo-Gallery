@@ -9,15 +9,16 @@
             </h1>
             <?php 
 
+            // $new_user = new User();
+            // $new_user->username     = 'ellie_bauer';
+            // $new_user->password     = '1801';
+            // $new_user->first_name   = 'Ellie';
+            // $new_user->last_name    = 'Bauer';
+
+            // $new_user->create();
             
-            $users = User::find_all_users();
-            foreach($users as $user){
-                echo $user->username . "<br>";
-            }
-
-            $found_user = User::find_user_by_id(2);  
-            echo $found_user->username;
-
+            $user = User::find_user_by_id(5);
+            $user->delete_user();
 
             ?>
             <ol class="breadcrumb">
