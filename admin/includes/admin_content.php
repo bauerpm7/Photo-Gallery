@@ -9,9 +9,9 @@
             </h1>
             <?php 
 
-            $new_user = User::find_user_by_id(13);
-            $new_user->password = "largepizza";
-            $new_user->save();
+            $new_user = new User();
+            $new_user->username = "elliebauer";
+            $new_user->save()
             
 
             ?>
