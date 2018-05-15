@@ -1,5 +1,5 @@
 <?php include("includes/header.php"); ?>
-<?php if(!$session->is_signed_in()) {redirect("login.php"); return;}?>
+<?php if(!$session->is_signed_in()) {redirect("login.php");}?>
 <?php 
 $message = "";
 if(isset($_POST['submit'])){
@@ -13,9 +13,7 @@ if(isset($_POST['submit'])){
     $message = join("<br", $photo->errors);
    }
 }
-
 ?>
-
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,8 +26,6 @@ if(isset($_POST['submit'])){
 
     <!-- /.navbar-collapse -->
 </nav>
-
-
 
 <div id="page-wrapper">
   <div class="container-fluid">
