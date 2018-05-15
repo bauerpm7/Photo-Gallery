@@ -1,8 +1,6 @@
-<?php include("includes/header.php"); ?>
+<?php require_once("includes/header.php"); ?>
 <?php 
-    if(!$session->is_signed_in()) {
-        redirect("login.php");
-    }
+    $session->is_signed_in() ? null : redirect("login.php");
 ?>
 
 <!-- Navigation -->

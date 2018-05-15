@@ -33,7 +33,6 @@ class Session {
 
   //getter function to use throughout the application to show if user is signed in
   public function is_signed_in() {
-    echo $this->signed_in;
     return $this->signed_in;
 
   }

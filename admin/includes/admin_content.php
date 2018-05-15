@@ -7,14 +7,11 @@
                 Admin
                 <small>Subheading</small>
             </h1>
-            <?php 
+            <!-- <?php 
 
-            $new_user = new User();
-            $new_user->username = "elliebauer";
-            $new_user->save()
-            
+            // echo INCLUDES_PATH
 
-            ?>
+            ?> -->
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
