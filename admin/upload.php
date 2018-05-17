@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
    $photo->title = $_POST['title'];
    $photo->set_file($_FILES['file_upload']);
 
-   if($photo->save()) {
+   if($photo->save_data()) {
     $message = "Photo uploaded successfully";
    } else {
     $message = join("<br", $photo->errors);

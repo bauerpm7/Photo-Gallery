@@ -16,7 +16,7 @@
             $photo->alternate_text = $_POST['alternate_text'];
             $photo->description = $_POST['description'];
 
-            $photo->save();
+            $photo->save_data();
         }
     }
 
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="info-box-update pull-right ">
                                     <input type="submit" name="update" value="Update" class="btn btn-primary btn-lg ">
-                            </div>   
+                                </div>   
                             </div>
                         </div>          
                     </div>
